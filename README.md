@@ -51,7 +51,7 @@ Deploy to Cloudflare Workers:
 npm run cf:deploy
 ```
 
-The deployment uses [`wrangler.jsonc`](./wrangler.jsonc) as its source of truth. It uploads the server-rendered Vinext Worker and the static client assets together. `nodejs_compat` is enabled because the generated server bundle uses Node-compatible runtime APIs.
+The deployment uses [`wrangler.jsonc`](./wrangler.jsonc) as its source of truth. It uploads the server-rendered Vinext Worker and the static client assets together. Static assets are matched before requests fall through to Vinext, ensuring generated CSS and JavaScript are served with their correct content types. `nodejs_compat` is enabled because the generated server bundle uses Node-compatible runtime APIs.
 
 ### Cloudflare dashboard deployment
 
